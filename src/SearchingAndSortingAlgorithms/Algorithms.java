@@ -62,4 +62,56 @@ public class Algorithms {
 		return false;
 	}
 
+	public static List<Double> sortScores(List<Double> list) {
+		double temp = 0;
+		for (int j = 0; j < list.size() - 1; j++) {
+			boolean swap = false;
+			for (int i = 0; i < list.size() - 1; i++) {
+				if (list.get(i) > list.get(i + 1)) {
+					swap = true;
+					temp = list.get(i + 1);
+					list.set(i + 1, list.get(i));
+					list.set(i, temp);
+				}
+			}
+			if (swap == false) {
+				return list;
+			}
+		}
+		return list;
+	}
+
+	public static List<String> sortDNA(List<String> list) {
+		String temp = "";
+		for (int j = 0; j < list.size() - 1; j++) {
+			boolean swap = false;
+			for (int i = 0; i < list.size() - 1; i++) {
+				if (list.get(i).length() > list.get(i + 1).length()) {
+					swap = true;
+					temp = list.get(i + 1);
+					list.set(i + 1, list.get(i));
+					list.set(i, temp);
+				}
+			}
+			if (swap == false) {
+				return list;
+			}
+		}
+		return list;
+	}
+
+	public static List<String> sortWords(List<String> list) {
+		String temp = "";
+		for (int j = 0; j < list.size() - 1; j++) {
+			for (int i = 0; i < list.size() - 1; i++) {
+				if (list.get(i).compareTo(list.get(i + 1)) > 0) {
+					temp = list.get(i + 1);
+					list.set(i + 1, list.get(i));
+					list.set(i, temp);
+				}
+			}
+		}
+
+		return list;
+	}
 }
